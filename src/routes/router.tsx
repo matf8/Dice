@@ -1,9 +1,9 @@
 import { lazy, Suspense } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
-import LoadingFallback from '../components/Loading/LoadingFallback'
+import LoadingFallback from '@components/Loading/LoadingFallback'
 
 const App = lazy(() => import('@/App'))
-const DicePage = lazy(() => import('../pages/DicePage'))
+const DicePage = lazy(() => import('@pages/DicePage'))
 
 export const router = createBrowserRouter(
   [

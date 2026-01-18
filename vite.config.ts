@@ -4,13 +4,8 @@ import path from 'path'
 import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
-// https://vite.dev/config/
 export default defineConfig({
-  base: '/Dice/',
-  server: {
-    host: '0.0.0.0',
-    allowedHosts: ['overhearty-arya-laudatorily.ngrok-free.dev'],
-  },
+  base: '/Dice/',  
   plugins: [
     react(),
     tailwindcss(),
@@ -85,6 +80,7 @@ export default defineConfig({
       '@lib': path.resolve(__dirname, './src/lib'),
       '@hooks': path.resolve(__dirname, './src/hooks'),
       '@dtypes': path.resolve(__dirname, './src/types'),
+      '@pages': path.resolve(__dirname, './src/pages'),
     },
   },
 })
