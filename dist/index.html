@@ -44,8 +44,18 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="apple-mobile-web-app-title" content="Dice" />
     <title>MatRo Dice App</title>
-    <script type="module" crossorigin src="/Dice/assets/index-g3DQp9is.js"></script>
-    <link rel="stylesheet" crossorigin href="/Dice/assets/index-CVb_d-A9.css">
+    <script>
+      // GitHub Pages SPA redirect handler
+      (function() {
+        var redirect = sessionStorage.getItem('redirect');
+        if (redirect) {
+          sessionStorage.removeItem('redirect');
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/Dice/assets/index-1u7t8c76.js"></script>
+    <link rel="stylesheet" crossorigin href="/Dice/assets/index-Ck0yDiUk.css">
   <link rel="manifest" href="/Dice/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/Dice/registerSW.js"></script></head>
   <body>
     <div id="root"></div>
