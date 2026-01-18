@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dice App</title>
+    <script>
+      // GitHub Pages SPA redirect trick
+      // Save the path so we can redirect after the main app loads
+      sessionStorage.setItem('redirect', location.pathname + location.search + location.hash);
+      // Redirect to root, which will load index.html
+      location.replace('/Dice/');
+    </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+  </body>
+</html>
