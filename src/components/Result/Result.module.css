@@ -1,0 +1,136 @@
+@keyframes slideInDown {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+}
+
+.container {
+  transform: translateX(-50%);
+  pointer-events: none;
+  text-align: center;
+  user-select: none;
+  z-index: 20;
+  will-change: transform, opacity;
+  white-space: nowrap;
+}
+
+.visible {
+  animation: slideInDown 0.6s cubic-bezier(0.22, 1.2, 0.36, 1) forwards;
+  transform: scale(1);
+  opacity: 1;
+}
+
+.hidden {
+  animation: fadeOut 0.7s ease-out forwards;
+  transform: scale(0.9);
+  opacity: 0;
+}
+
+.wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.bgGlow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgb(59, 130, 246, 0.3),
+    rgb(168, 85, 247, 0.3),
+    rgb(236, 72, 153, 0.3)
+  );
+  filter: blur(48px);
+  border-radius: 1rem;
+  transform: scale(1.1);
+}
+
+.content {
+  position: relative;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  border: 1px solid rgb(255, 255, 255, 0.2);
+  background-color: rgb(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+}
+
+.text {
+  font-family: 'Tilt Neon', sans-serif;
+  font-size: 2.25rem;
+  letter-spacing: 0.05em;
+  color: rgb(191, 219, 254);
+  --shadow-step: 0.03em;
+  text-shadow:
+    calc(var(--shadow-step) * 1) 0 0 rgb(216, 180, 254),
+    calc(var(--shadow-step) * 1) 0 0 rgb(236, 72, 153),
+    calc(var(--shadow-step) * 2) 0 0 rgb(168, 85, 247),
+    calc(var(--shadow-step) * 2) 0 0 rgb(59, 130, 246),
+    calc(var(--shadow-step) * 2) 0 0 rgb(244, 114, 182);
+  filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.4));
+  -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 640px) {
+  .text {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .text {
+    font-size: 3.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text {
+    font-size: 4.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .text {
+    font-size: 6rem;
+  }
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  opacity: 0;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.glowBorder {
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  border: 1px solid rgba(250, 225, 4, 0.918);
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/dice.png" fetchpriority="high" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/dice-180.png" />
+    <link
+      rel="preload"
+      as="image"
+      href="/images/juego@200.webp"
+      imagesrcset="/images/juego@200.webp 1x, /images/juego@400.webp 2x"
+      imagesizes="200px"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/images/cocina@200.webp"
+      imagesrcset="/images/cocina@200.webp 1x, /images/cocina@400.webp 2x"
+      imagesizes="200px"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/images/deporte@200.webp"
+      imagesrcset="/images/deporte@200.webp 1x, /images/deporte@400.webp 2x"
+      imagesizes="200px"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap"
+      as="style"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#4b5563" />
+    <meta
+      name="description"
+      content="A fun interactive dice rolling app with 3D effects"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Dice" />
+    <title>MatRo Dice App</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
