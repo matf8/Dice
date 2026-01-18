@@ -30,7 +30,7 @@ npm install
 
 ## 🚀 Development
 
-### Local Development (HTTP)
+### Local Development
 
 ```bash
 npm start
@@ -38,26 +38,23 @@ npm start
 
 Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-### Testing PWA on iOS (HTTPS required)
-
-iOS requires HTTPS for PWA installation. Use ngrok to expose your local server:
+### Production Preview
 
 ```bash
-# 1. Build production version
+# Build and preview production version
 npm run build
-
-# 2. Serve production build
-npm run preview -- --host
-
-# 3. In another terminal, start ngrok tunnel
-ngrok http 4173
+npm run preview
 ```
 
-Open the ngrok HTTPS URL (e.g., `https://xxxxx.ngrok-free.dev`) on your iOS device in Safari, then:
+### Live Demo
 
-1. Tap **Share** button
-2. Select **"Add to Home Screen"**
-3. Open the installed app
+The app is deployed and available at: **[https://matf8.github.io/Dice/](https://matf8.github.io/Dice/)**
+
+To install as PWA on iOS:
+1. Open the link in Safari
+2. Tap **Share** button
+3. Select **"Add to Home Screen"**
+4. Open the installed app
 
 ## 📜 Available Scripts
 
@@ -112,20 +109,20 @@ The app uses `vite-plugin-pwa` with:
 
 ## 🌐 Deployment
 
-### Using ngrok (Development/Testing)
+### GitHub Pages (Automatic)
 
-1. Build the app: `npm run build`
-2. Serve: `npm run preview -- --host`
-3. Tunnel: `ngrok http 4173`
-4. Share the HTTPS URL
+The app automatically deploys to GitHub Pages on every push to `main`:
 
-### Production Hosting
+1. Push your changes: `git push origin main`
+2. GitHub Actions builds and deploys to `gh-pages` branch
+3. App is live at: `https://matf8.github.io/Dice/`
+
+### Manual Deployment to Other Platforms
 
 Deploy the `dist/` folder to any static hosting service:
 
 - **Vercel**: `vercel --prod`
 - **Netlify**: Drag & drop `dist/` folder
-- **GitHub Pages**: Push to `gh-pages` branch
 - **Cloudflare Pages**: Connect your repository
 
 Ensure your hosting service serves with HTTPS for full PWA functionality.
@@ -146,7 +143,7 @@ Update the `DICE_ACTIONS` object in `src/types/dice.ts` with new action strings 
 
 ## 📱 iOS Installation Tips
 
-- **HTTPS Required**: iOS only installs PWAs from HTTPS sites (use ngrok for local testing)
+- **HTTPS Required**: iOS only installs PWAs from HTTPS sites (production site or local preview with HTTPS)
 - **Clear Cache**: If icon doesn't appear, clear Safari data in Settings
 - **Status Bar**: Configured to match app theme (`black`)
 - **Home Screen**: Uses `dice-180.png` as the icon
@@ -155,7 +152,7 @@ Update the `DICE_ACTIONS` object in `src/types/dice.ts` with new action strings 
 
 ### Icon shows as "D" on iOS
 
-- Ensure you're using HTTPS (ngrok or production domain)
+- Ensure you're using HTTPS (production domain)
 - Clear Safari cache: Settings → Safari → Clear History and Website Data
 - Reinstall the app after clearing cache
 
@@ -165,10 +162,11 @@ Update the `DICE_ACTIONS` object in `src/types/dice.ts` with new action strings 
 - Rebuild with `npm run build` to refresh the precache manifest
 - Use `preview` mode, not `start` (dev mode doesn't register SW properly)
 
-### ngrok "Blocked request" error
+### 404 errors on GitHub Pages
 
-- Check `vite.config.ts` has your ngrok domain in `server.allowedHosts` and `preview.allowedHosts`
-- Restart the preview server after config changes
+- Ensure base path is set to `/Dice/` in `vite.config.ts`
+- Verify GitHub Pages is serving from `gh-pages` branch
+- Check that the build completed successfully in GitHub Actions
 
 ## 📄 License
 
