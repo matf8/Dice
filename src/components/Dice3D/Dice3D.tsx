@@ -2,10 +2,12 @@ import type { Dice3DProps, DiceValue } from '@dtypes/dice'
 import { memo, useEffect, useRef, useState } from 'react'
 import { Face } from './Cube/Face'
 import DiceFaceImage from './DiceFaceImage'
+
+const BASE = import.meta.env.BASE_URL || '/'
 const IMG = {
-  GAME: '/images/juego.png',
-  COOK: '/images/cocina.png',
-  EXERCISE: '/images/deporte.png',
+  GAME: `${BASE}images/juego.png`,
+  COOK: `${BASE}images/cocina.png`,
+  EXERCISE: `${BASE}images/deporte.png`,
 } as const
 
 function Dice3D({ value, rolling }: Dice3DProps) {

@@ -2,45 +2,45 @@
   "name": "Dice App",
   "short_name": "Dice",
   "description": "A fun interactive dice rolling app with 3D effects",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "/Dice/",
+  "scope": "/Dice/",
   "display": "standalone",
   "orientation": "portrait-primary",
   "theme_color": "#4b5563",
   "background_color": "#4b5563",
   "icons": [
     {
-      "src": "/dice-180.png",
+      "src": "/Dice/dice-180.png",
       "sizes": "180x180",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/dice-192.png",
+      "src": "/Dice/dice-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/dice-512.png",
+      "src": "/Dice/dice-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/dice-180.png",
+      "src": "/Dice/dice-180.png",
       "sizes": "180x180",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/dice-192.png",
+      "src": "/Dice/dice-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/dice-512.png",
+      "src": "/Dice/dice-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
